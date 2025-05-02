@@ -1,77 +1,59 @@
 // 移动端菜单
 document.addEventListener('DOMContentLoaded', function() {
-    initMobileMenu();
-});
-
-function initMobileMenu() {
+    console.log('DOM加载完成，初始化移动端菜单...');
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
     
-    if (!menuToggle || !nav) {
-        console.error('Menu elements not found');
-        return;
-    }
-
-    // 创建背景遮罩
-    const backdrop = document.createElement('div');
-    backdrop.className = 'nav-backdrop';
-    document.body.appendChild(backdrop);
-
-    // 切换菜单状态
-    function toggleMenu() {
-        const isActive = nav.classList.contains('active');
+    console.log('菜单按钮元素:', menuToggle);
+    console.log('导航元素:', nav);
+    
+    // 检查元素是否存在
+    if (menuToggle && nav) {
+        console.log('菜单元素已找到，设置事件监听器');
         
-        if (!isActive) {
-            nav.style.display = 'flex';
-            requestAnimationFrame(() => {
-                nav.classList.add('active');
-                backdrop.classList.add('active');
+        // 移除可能已存在的事件监听器
+        const newMenuToggle = menuToggle.cloneNode(true);
+        menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+        
+        // 添加新的事件监听器
+        newMenuToggle.addEventListener('click', function() {
+            console.log('菜单按钮被点击');
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+            
+            // 防止菜单打开时页面滚动
+            if (nav.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
-            });
-        } else {
-            nav.classList.remove('active');
-            backdrop.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                if (!nav.classList.contains('active')) {
-                    nav.style.display = '';
-                }
-            }, 300);
-        }
+                console.log('菜单已打开');
+            } else {
+                document.body.style.overflow = '';
+                console.log('菜单已关闭');
+            }
+        });
         
-        menuToggle.classList.toggle('active');
+        // 点击导航链接后自动关闭菜单
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                newMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // 点击菜单外部关闭
+        document.addEventListener('click', function(event) {
+            if (nav.classList.contains('active') && 
+                !nav.contains(event.target) && 
+                !newMenuToggle.contains(event.target)) {
+                nav.classList.remove('active');
+                newMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    } else {
+        console.error('未找到菜单元素，无法初始化移动端菜单');
     }
-
-    // 关闭菜单
-    function closeMenu() {
-        nav.classList.remove('active');
-        menuToggle.classList.remove('active');
-        backdrop.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    // 添加事件监听
-    menuToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMenu();
-    });
-
-    backdrop.addEventListener('click', closeMenu);
-
-    // 点击导航链接时关闭菜单
-    nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // 监听窗口大小变化
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            closeMenu();
-            nav.style.display = '';
-        }
-    });
-}
+});
 
 // 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -145,24 +127,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// 优化的复制域名提示
-function copyDomain(domain) {
-    const textarea = document.createElement('textarea');
-    textarea.value = domain;
-    document.body.appendChild(textarea);
-    textarea.select();
+// 复制到剪贴板功能
+function copyToClipboard(text) {
+    // 创建一个临时的textarea元素
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    
+    // 确保textarea不可见
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
     
     try {
-        document.execCommand('copy');
-        showToast('域名已复制到剪贴板');
+        // 尝试复制
+        const successful = document.execCommand('copy');
+        const msg = successful ? '已复制: ' + text : '复制失败，请手动复制';
+        console.log(msg);
+        
+        // 显示复制成功的提示
+        showCopyToast(text);
     } catch (err) {
         console.error('复制失败:', err);
         showToast('复制失败，请手动复制');
     }
     
-    document.body.removeChild(textarea);
+    document.body.removeChild(textArea);
 }
 
+// 显示复制成功的提示
+function showCopyToast(text) {
+    showToast(`已复制到剪贴板: ${text}`);
+}
+
+// 显示Toast提示
 function showToast(message) {
     const toast = document.createElement('div');
     toast.className = 'toast';
@@ -336,18 +338,4 @@ function owlcarousel() {
 
 $(document).ready(function() {
     owlcarousel();
-});
-
-// 移动端菜单切换
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.querySelector('.nav').classList.toggle('active');
-});
-
-// 点击导航链接时关闭菜单
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.querySelector('.nav').classList.remove('active');
-        document.querySelector('.menu-toggle').classList.remove('active');
-    });
 }); 

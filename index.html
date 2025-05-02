@@ -2,32 +2,51 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>NetFly</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/fix-mobile-menu.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        /* 确保移动端菜单按钮可见 */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex !important;
+                cursor: pointer;
+            }
+            
+            .header {
+                z-index: 9999 !important;
+            }
+            
+            .header-inner {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="header-inner">
-            <a href="/" class="logo-link">
-                <img src="assets/images/logo.svg" alt="NetFly" class="logo">
-            </a>
-            <button type="button" class="menu-toggle" aria-label="菜单" aria-expanded="false">
+            <img src="assets/images/logo.svg" alt="NetFly" class="logo">
+            <div class="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
-            <nav class="nav" role="navigation">
-                <a href="/" class="nav-link">首页</a>
-                <a href="/login" class="nav-link">登录</a>
-                <a href="/register" class="register">立即注册</a>
-                <a href="/contact" class="nav-link">联系我们</a>
+            </div>
+            <nav class="nav">
+                <a href="https://xn--ur0a663c.shop">首页</a>
+                <a href="https://fo2.netfly.life/login">登录</a>
+                <a href="https://fo2.netfly.life/register" class="register">立即注册</a>
+                <a href="https://t.me/netfly_vpn" class="telegram-link">联系我们</a>
             </nav>
         </div>
     </header>
@@ -40,19 +59,23 @@
             </div>
             <h1 class="display-1">尽情冲浪</h1>
             <p class="display-1">无界畅享自由网络</p>
-            <p class="domain" onclick="copyDomain('v50.my')">永久发布页：v50.my / 微信转50.me</p>
+            <p class="domain">永久发布页：
+                <a href="https://v50.my" target="_blank" onclick="event.preventDefault(); copyToClipboard('v50.my'); return false;" title="点击复制">v50.my</a> / 
+                <a href="https://微信转50.me" target="_blank" onclick="event.preventDefault(); copyToClipboard('微信转50.me'); return false;" title="点击复制">微信转50.me</a>
+                <span class="copy-hint">点击可复制</span>
+            </p>
             <p class="bookmark-tip">强烈建议 Ctrl+D 收藏本站</p>
             <div class="buttons">
-                <a href="/register" class="btn btn-primary">立即注册</a>
-                <a href="/login" class="btn btn-secondary">登录</a>
+                <a href="https://fo2.netfly.life/register" class="btn btn-primary">立即注册</a>
+                <a href="https://fo2.netfly.life/login" class="btn btn-secondary">登录</a>
             </div>
             <div class="download">
                 <h3>客户端下载</h3>
                 <div class="download-links">
-                    <a href="#" data-os="windows">Windows</a>
-                    <a href="#" data-os="mac">MacOS</a>
-                    <a href="#" data-os="android">Android</a>
-                    <a href="#" data-os="ios">iOS</a>
+                    <a href="https://fo2.netfly.life/download/windows" data-os="windows">Windows</a>
+                    <a href="https://fo2.netfly.life/download/mac" data-os="mac">MacOS</a>
+                    <a href="https://fo2.netfly.life/download/android" data-os="android">Android</a>
+                    <a href="https://fo2.netfly.life/download/ios" data-os="ios">iOS</a>
                 </div>
             </div>
 
@@ -133,7 +156,7 @@
     </main>
 
     <div class="footer-copyright">
-        <p>© 2025 Powered by <a href="#">NetFly Network Ltd.</a></p>
+        <p>© 2025 Powered by <a href="https://xn--ur0a663c.shop/">NetFly Network Ltd.</a></p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

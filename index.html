@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetFly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <img src="assets/images/logo.svg" alt="NetFly" class="logo">
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav">
+                <a href="/">首页</a>
+                <a href="/login">登录</a>
+                <a href="/register" class="register">立即注册</a>
+                <a href="/contact">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="typewriter">
+                <span class="typed-text"></span>
+                <span class="cursor">|</span>
+            </div>
+            <h1 class="display-1">尽情冲浪</h1>
+            <p class="display-1">无界畅享自由网络</p>
+            <p class="domain" onclick="copyDomain('v50.my')">永久发布页：v50.my / 微信转50.me</p>
+            <p class="bookmark-tip">强烈建议 Ctrl+D 收藏本站</p>
+            <div class="buttons">
+                <a href="/register" class="btn btn-primary">立即注册</a>
+                <a href="/login" class="btn btn-secondary">登录</a>
+            </div>
+            <div class="download">
+                <h3>客户端下载</h3>
+                <div class="download-links">
+                    <a href="#" data-os="windows">Windows</a>
+                    <a href="#" data-os="mac">MacOS</a>
+                    <a href="#" data-os="android">Android</a>
+                    <a href="#" data-os="ios">iOS</a>
+                </div>
+            </div>
+
+            <div class="carriers">
+                <div class="owl-carousel no-pb" data-items="6" data-md-items="4" data-sm-items="3" data-xs-items="2" data-margin="30" data-autoplay="true">
+                    <div class="item">
+                        <div class="clients-logo">
+                            <img class="img-fluid" src="assets/images/client/cm.svg" alt="中国移动">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="clients-logo">
+                            <img class="img-fluid" src="assets/images/client/ct.svg" alt="中国电信">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="clients-logo">
+                            <img class="img-fluid" src="assets/images/client/sk.svg" alt="SK Telecom">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="clients-logo">
+                            <img class="img-fluid" src="assets/images/client/singtel.svg" alt="Singtel">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="clients-logo">
+                            <img class="img-fluid" src="assets/images/client/pccw.svg" alt="PCCW">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="clients-logo">
+                            <img class="img-fluid" src="assets/images/client/ntt.svg" alt="NTT">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="pt-0">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12 col-md-12 col-lg-8 mb-8 mb-lg-0">
+                            <div class="mb-8 slogan">
+                                <h2 class="mt-4 font-w-6 title-text">可靠性、安全性和速度保证</h2>
+                                <h2 class="mt-1 font-w-6 title-text">不要把宝贵的时间，浪费在等待上</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-end">
+                        <div class="col-lg-4">
+                            <div class="noise">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h5 class="m-0 text-light">高速稳定线路</h5>
+                                </div>
+                                <p class="mb-0">全球 40+ 加速网络连接服务点，全新升级的 YepFast 采用更多的线路和更强大的硬件部署，只为用户高速体验。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="noise">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h5 class="m-0 text-light">运营商智能优化</h5>
+                                </div>
+                                <p class="mb-0">可自选中转入口、负载均衡设定。从运营商开始，至最优服务器分配，均经过智慧设定，体验宛若身在海外的访问速度。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="noise">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h5 class="m-0 text-light">全平台支持</h5>
+                                </div>
+                                <p class="mb-0">Windows、MacOS、Android 一键连接畅游网络；Shadowrocket、Quantumult X、Clash、Surge 等均支持订阅。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div class="footer-copyright">
+        <p>© 2025 Powered by <a href="#">NetFly Network Ltd.</a></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 

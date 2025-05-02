@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="29" viewBox="0 0 120 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- 白色渐变 -->
+        <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- 字体样式 -->
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap');
+        </style>
+    </defs>
+
+    <!-- Net文字（带斜度） -->
+    <text x="10" y="20" fill="url(#whiteGradient)" font-family="Montserrat, sans-serif" font-weight="700" font-size="18" transform="skewX(-12)">
+        Net
+    </text>
+
+    <!-- Fly背景方框 -->
+    <rect x="42" y="4" width="38" height="20" rx="2" fill="#ffffff" />
+    
+    <!-- Fly文字 -->
+    <text x="44" y="20" fill="#000000" font-family="Montserrat, sans-serif" font-weight="700" font-size="18" transform="skewX(-6)">
+        Fly
+    </text>
+
+    <!-- 闪烁的点 -->
+    <circle cx="76" cy="20" r="1.5" fill="#000000">
+        <animate attributeName="opacity"
+            values="1;0;1"
+            dur="1s"
+            repeatCount="indefinite"/>
+    </circle>
+</svg>

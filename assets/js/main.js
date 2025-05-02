@@ -1,15 +1,77 @@
 // 移动端菜单
 document.addEventListener('DOMContentLoaded', function() {
+    initMobileMenu();
+});
+
+function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
     
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
+    if (!menuToggle || !nav) {
+        console.error('Menu elements not found');
+        return;
     }
-});
+
+    // 创建背景遮罩
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    // 切换菜单状态
+    function toggleMenu() {
+        const isActive = nav.classList.contains('active');
+        
+        if (!isActive) {
+            nav.style.display = 'flex';
+            requestAnimationFrame(() => {
+                nav.classList.add('active');
+                backdrop.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        } else {
+            nav.classList.remove('active');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                if (!nav.classList.contains('active')) {
+                    nav.style.display = '';
+                }
+            }, 300);
+        }
+        
+        menuToggle.classList.toggle('active');
+    }
+
+    // 关闭菜单
+    function closeMenu() {
+        nav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // 添加事件监听
+    menuToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    backdrop.addEventListener('click', closeMenu);
+
+    // 点击导航链接时关闭菜单
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // 监听窗口大小变化
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMenu();
+            nav.style.display = '';
+        }
+    });
+}
 
 // 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -274,4 +336,18 @@ function owlcarousel() {
 
 $(document).ready(function() {
     owlcarousel();
+});
+
+// 移动端菜单切换
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.nav').classList.toggle('active');
+});
+
+// 点击导航链接时关闭菜单
+document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav').classList.remove('active');
+        document.querySelector('.menu-toggle').classList.remove('active');
+    });
 }); 

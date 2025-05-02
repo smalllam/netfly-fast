@@ -2,31 +2,32 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NetFly</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header class="header">
         <div class="header-inner">
-            <img src="assets/images/logo.svg" alt="NetFly" class="logo">
-            <div class="menu-toggle">
+            <a href="/" class="logo-link">
+                <img src="assets/images/logo.svg" alt="NetFly" class="logo">
+            </a>
+            <button type="button" class="menu-toggle" aria-label="菜单" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <nav class="nav">
-                <a href="/">首页</a>
-                <a href="/login">登录</a>
+            </button>
+            <nav class="nav" role="navigation">
+                <a href="/" class="nav-link">首页</a>
+                <a href="/login" class="nav-link">登录</a>
                 <a href="/register" class="register">立即注册</a>
-                <a href="/contact">联系我们</a>
+                <a href="/contact" class="nav-link">联系我们</a>
             </nav>
         </div>
     </header>

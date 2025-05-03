@@ -203,10 +203,18 @@
 
     <!-- 主题切换脚本 -->
     <script>
-        // 获取存储的主题或默认为暗色
-        const currentTheme = localStorage.getItem('theme') || 'dark';
+        // 检查当前时间，决定使用哪种主题
+        function getThemeByTime() {
+            const hour = new Date().getHours();
+            // 日间时段 (6:00 - 18:59) 使用亮色主题，夜间使用暗色主题
+            return (hour >= 6 && hour < 19) ? 'light' : 'dark';
+        }
         
-        // 应用保存的主题
+        // 获取存储的主题或根据时间决定主题
+        const storedTheme = localStorage.getItem('theme');
+        const currentTheme = storedTheme || getThemeByTime();
+        
+        // 应用主题
         document.documentElement.setAttribute('data-theme', currentTheme);
         
         // 更新logo
@@ -214,6 +222,44 @@
         
         // 更新图标显示
         updateThemeIcon(currentTheme);
+        
+        // 如果没有存储过主题，根据时间变化自动切换主题
+        if (!storedTheme) {
+            // 检查当前分钟数，设置下一次检查的时间
+            const now = new Date();
+            const hour = now.getHours();
+            let nextCheckTime;
+            
+            if (hour < 6) {
+                // 当前是夜间，下次检查时间是早上6点
+                nextCheckTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 6, 0, 0);
+            } else if (hour < 19) {
+                // 当前是日间，下次检查时间是晚上19点
+                nextCheckTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 0, 0);
+            } else {
+                // 当前是夜间，下次检查时间是明天早上6点
+                nextCheckTime = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 6, 0, 0);
+            }
+            
+            // 计算到下次检查的毫秒数
+            const timeUntilNextCheck = nextCheckTime - now;
+            
+            // 设置定时器，到时间自动切换主题
+            setTimeout(function() {
+                const newTheme = getThemeByTime();
+                document.documentElement.setAttribute('data-theme', newTheme);
+                updateLogo(newTheme);
+                updateThemeIcon(newTheme);
+                
+                // 递归设置下一次检查
+                setInterval(function() {
+                    const theme = getThemeByTime();
+                    document.documentElement.setAttribute('data-theme', theme);
+                    updateLogo(theme);
+                    updateThemeIcon(theme);
+                }, 13 * 60 * 60 * 1000); // 每13小时检查一次，确保每天至少检查到一次日夜更替
+            }, timeUntilNextCheck);
+        }
         
         // 主题切换按钮点击事件
         document.getElementById('themeToggle').addEventListener('click', function(e) {

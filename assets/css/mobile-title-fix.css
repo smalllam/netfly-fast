@@ -4,7 +4,7 @@
 @media (max-width: 768px) {
     /* 移动端大标题调整 */
     .display-1 {
-        font-size: 2.2rem !important;
+        font-size: 2.6rem !important;
         line-height: 1.3;
         margin-bottom: 0.8rem;
         letter-spacing: 0.08rem;
@@ -12,12 +12,12 @@
     
     /* 特殊调整 */
     .title-main {
-        font-size: 2.4rem !important;
+        font-size: 2.8rem !important;
         margin-bottom: 0.4rem;
     }
     
     .title-sub {
-        font-size: 2.0rem !important;
+        font-size: 2.4rem !important;
         margin-bottom: 1rem;
     }
 }
@@ -25,7 +25,7 @@
 /* 适配更小的手机屏幕 */
 @media (max-width: 480px) {
     .display-1 {
-        font-size: 1.8rem !important;
+        font-size: 2.2rem !important;
         line-height: 1.25;
         margin-bottom: 0.6rem;
         letter-spacing: 0.05rem;
@@ -33,28 +33,28 @@
     
     /* 特殊调整 */
     .title-main {
-        font-size: 2.0rem !important;
+        font-size: 2.4rem !important;
     }
     
     .title-sub {
-        font-size: 1.6rem !important;
+        font-size: 2.0rem !important;
     }
 }
 
 /* 竖屏模式特殊处理 */
 @media (max-height: 600px) and (orientation: portrait) {
     .display-1 {
-        font-size: 1.6rem !important;
+        font-size: 2.0rem !important;
         margin-bottom: 0.5rem;
     }
     
     /* 特殊调整 */
     .title-main {
-        font-size: 1.8rem !important;
+        font-size: 2.2rem !important;
     }
     
     .title-sub {
-        font-size: 1.4rem !important;
+        font-size: 1.8rem !important;
     }
 }
 

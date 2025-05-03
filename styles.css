@@ -711,7 +711,7 @@ section {
 }
 
 .display-1 {
-    font-size: 3.75rem;
+    font-size: 4.25rem;
     font-weight: 800;
     background: var(--gradient-text);
     -webkit-background-clip: text;

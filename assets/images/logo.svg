@@ -18,16 +18,16 @@
         Net
     </text>
 
-    <!-- Fly背景方框 -->
-    <rect x="42" y="4" width="38" height="20" rx="2" fill="#ffffff" />
+    <!-- Fly背景方框 - 增加间距 -->
+    <rect x="42" y="4" width="40" height="20" rx="2" fill="#ffffff" />
     
-    <!-- Fly文字 -->
-    <text x="44" y="20" fill="#000000" font-family="Montserrat, sans-serif" font-weight="700" font-size="18" transform="skewX(-6)">
+    <!-- Fly文字 - 调整位置 -->
+    <text x="46" y="20" fill="#000000" font-family="Montserrat, sans-serif" font-weight="700" font-size="18" transform="skewX(-6)">
         Fly
     </text>
 
-    <!-- 闪烁的点 -->
-    <circle cx="76" cy="20" r="1.5" fill="#000000">
+    <!-- 闪烁的点 - 调整位置 -->
+    <circle cx="78" cy="20" r="1.5" fill="#000000">
         <animate attributeName="opacity"
             values="1;0;1"
             dur="1s"

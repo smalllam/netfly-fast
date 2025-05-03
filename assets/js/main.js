@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 打字机效果
 const typedTextSpan = document.querySelector('.typed-text');
-const texts = ['NetFly Fast', '点亮全球，你值得拥有!'];
+const texts = ['NetFly Fast!', '点亮全球，你值得拥有!'];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

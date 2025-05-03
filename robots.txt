@@ -1,3 +1,31 @@
+# Robots.txt for NetFly
+# 最后更新: 2023年
+
+# 国际搜索引擎可以访问所有内容
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yahoo
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: *
+Allow: /
+
 # 禁止所有中国搜索引擎爬虫访问
 User-agent: Baiduspider
 Disallow: /
@@ -53,6 +81,5 @@ Disallow: /
 User-agent: toutiao
 Disallow: /
 
-# 允许其他搜索引擎有限度地访问
-User-agent: *
-Allow: / 
+# Sitemap链接
+Sitemap: https://xn--ur0a663c.shop/sitemap.xml 

@@ -7,8 +7,9 @@
     <meta name="description" content="NetFly提供高速、稳定、安全的全球网络加速服务，帮助用户畅享无界自由网络，支持Windows、MacOS、Android等全平台">
     <meta name="keywords" content="NetFly,网络加速,全球网络,隐私保护,安全上网,高速稳定,跨平台支持">
     
-    <!-- 屏蔽中国搜索引擎 -->
-    <meta name="robots" content="noindex,nofollow">
+    <!-- SEO设置 -->
+    <!-- 对国际搜索引擎开放，屏蔽中国搜索引擎 -->
+    <meta name="robots" content="index,follow">
     <meta name="Baiduspider" content="noindex,nofollow">
     <meta name="Baiduspider-image" content="noindex,nofollow">
     <meta name="Baiduspider-video" content="noindex,nofollow">
@@ -28,10 +29,25 @@
     <meta name="YoudaoBot" content="noindex,nofollow">
     <meta name="toutiao" content="noindex,nofollow">
     
+    <!-- 其他SEO优化标签 -->
+    <meta name="googlebot" content="index,follow">
+    <meta name="google" content="notranslate">
+    <meta name="author" content="NetFly">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://xn--ur0a663c.shop/">
+    
     <!-- 社交媒体标签 -->
     <meta property="og:title" content="NetFly - 高速稳定、隐私安全的全球网络加速服务">
     <meta property="og:description" content="NetFly提供高速、稳定、安全的全球网络加速服务，帮助用户畅享无界自由网络，支持Windows、MacOS、Android等全平台">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xn--ur0a663c.shop/">
+    <meta property="og:image" content="https://xn--ur0a663c.shop/assets/images/logo.svg">
+    
+    <!-- Twitter卡片标签 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NetFly - 高速稳定、隐私安全的全球网络加速服务">
+    <meta name="twitter:description" content="NetFly提供高速、稳定、安全的全球网络加速服务，帮助用户畅享无界自由网络，支持Windows、MacOS、Android等全平台">
+    <meta name="twitter:image" content="https://xn--ur0a663c.shop/assets/images/logo.svg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -300,6 +316,40 @@
                 logo.src = 'assets/images/logo.svg'; // 暗色主题用亮色logo
             }
         }
+    </script>
+
+    <!-- 结构化数据 (JSON-LD) 用于搜索引擎优化 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NetFly",
+        "url": "https://xn--ur0a663c.shop/",
+        "logo": "https://xn--ur0a663c.shop/assets/images/logo.svg",
+        "description": "NetFly提供高速、稳定、安全的全球网络加速服务，帮助用户畅享无界自由网络，支持Windows、MacOS、Android等全平台",
+        "sameAs": [
+            "https://t.me/netfly_vpn"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "name": "全球网络加速服务",
+            "description": "高速稳定、隐私安全的全球网络加速服务"
+        },
+        "knowsAbout": [
+            "网络加速",
+            "隐私保护",
+            "安全上网",
+            "全球网络"
+        ],
+        "potentialAction": {
+            "@type": "RegisterAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://fo2.netfly.life/register"
+            },
+            "name": "立即注册"
+        }
+    }
     </script>
 </body>
 </html> 

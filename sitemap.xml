@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- 主页 -->
+  <url>
+    <loc>https://xn--ur0a663c.shop/</loc>
+    <lastmod>2023-08-01T08:00:00+00:00</lastmod>
+    <priority>1.00</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- 登录页面 -->
+  <url>
+    <loc>https://fo2.netfly.life/login</loc>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- 注册页面 -->
+  <url>
+    <loc>https://fo2.netfly.life/register</loc>
+    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- 客户端下载页面 -->
+  <url>
+    <loc>https://fo2.netfly.life/download/windows</loc>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://fo2.netfly.life/download/mac</loc>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://fo2.netfly.life/download/android</loc>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://fo2.netfly.life/download/ios</loc>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset> 

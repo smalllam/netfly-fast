@@ -12,6 +12,216 @@
     font-size: 16px;
 }
 
+/* 亮色主题变量 */
+:root[data-theme="light"] {
+    --primary-color: #3478af;
+    --secondary-color: #1e4c70;
+    --background-color: #ffffff;
+    --text-color: #22313f;
+    --light-gray: #f5f5f5;
+    --border-color: #e0e0e0;
+    --gradient-text: linear-gradient(26deg, #000000, #1e4c70, #3478af);
+    --primary-hover: #1e4c70;
+}
+
+/* 导航栏主题切换按钮 */
+.theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle-btn:hover i {
+    transform: rotate(30deg);
+}
+
+:root[data-theme="light"] .theme-toggle-btn {
+    background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(30,76,112,0.1));
+}
+
+:root[data-theme="light"] .theme-toggle-btn:hover {
+    background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(30,76,112,0.2));
+}
+
+/* 亮色主题下特定元素调整 */
+:root[data-theme="light"] .main-nav {
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+:root[data-theme="light"] .main-nav:hover {
+    background-color: rgba(255,255,255,0.9);
+}
+
+:root[data-theme="light"] .main-nav a {
+    color: var(--text-color);
+}
+
+:root[data-theme="light"] .feature-card {
+    background-color: rgba(0,0,0,0.03);
+    border: 1px solid var(--border-color);
+}
+
+:root[data-theme="light"] .feature-card:hover {
+    box-shadow: 0 10px 30px rgba(30, 60, 114, 0.15);
+}
+
+:root[data-theme="light"] .title {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+:root[data-theme="light"] .title-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+:root[data-theme="light"] .display-1 {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+:root[data-theme="light"] .subtitle {
+    color: #22313f;
+    opacity: 0.8;
+}
+
+:root[data-theme="light"] .download-section {
+    background: rgba(0,0,0,0.05);
+    backdrop-filter: blur(5px);
+}
+
+:root[data-theme="light"] .typed-text,
+:root[data-theme="light"] .cursor {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+:root[data-theme="light"] .noise {
+    background-color: rgba(0,0,0,0.03);
+    border: 1px solid var(--border-color);
+}
+
+:root[data-theme="light"] .noise:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+:root[data-theme="light"] .noise p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+:root[data-theme="light"] .text-light {
+    color: var(--text-color) !important;
+}
+
+:root[data-theme="light"] .footer-copyright {
+    background-color: var(--light-gray);
+}
+
+:root[data-theme="light"] .footer-copyright p,
+:root[data-theme="light"] .footer-copyright a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+:root[data-theme="light"] .domain a,
+:root[data-theme="light"] .bookmark-tip {
+    color: #22313f;
+    opacity: 0.8;
+}
+
+:root[data-theme="light"] .domain a:hover {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+:root[data-theme="light"] .copy-hint {
+    color: var(--primary-color);
+}
+
+:root[data-theme="light"] .header {
+    background-color: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* 亮色主题下导航菜单样式 */
+:root[data-theme="light"] .nav a {
+    color: var(--text-color);
+}
+
+:root[data-theme="light"] .nav a:not(.register):not(.theme-toggle-btn)::after {
+    background-color: var(--primary-color);
+}
+
+:root[data-theme="light"] .nav a:not(.register):not(.theme-toggle-btn):hover {
+    color: var(--primary-color);
+    background: rgba(30, 60, 114, 0.05);
+}
+
+:root[data-theme="light"] .nav .register {
+    color: white;
+    background: var(--primary-color);
+    background: linear-gradient(to right, #1e4c70, #3478af);
+}
+
+:root[data-theme="light"] .nav .register:hover {
+    background: linear-gradient(to right, #153650, #2a608c);
+}
+
+:root[data-theme="light"] .menu-toggle span {
+    background-color: var(--text-color);
+}
+
+/* 按钮样式调整 */
+:root[data-theme="light"] .btn {
+    background: var(--primary-color);
+    background: linear-gradient(to right, #1e4c70, #3478af);
+    color: white;
+}
+
+:root[data-theme="light"] .btn:hover {
+    background: linear-gradient(to right, #153650, #2a608c);
+}
+
+:root[data-theme="light"] .btn.btn-secondary {
+    background: rgba(0,0,0,0.05);
+    color: var(--text-color);
+}
+
+:root[data-theme="light"] .btn.btn-secondary:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+/* 下载链接样式调整 */
+:root[data-theme="light"] .download-links a {
+    color: var(--text-color);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+:root[data-theme="light"] .download-links a:hover {
+    background: rgba(0,0,0,0.05);
+}
+
 @media (max-width: 992px) {
     :root {
         font-size: 15px;
@@ -266,7 +476,7 @@ body {
 
 .price-card.featured {
     border: 1px solid var(--primary-color);
-    background-color: rgba(26,144,255,0.1);
+    background-color: rgba(30, 60, 114, 0.05);
     transform: scale(1.05);
 }
 
@@ -377,6 +587,22 @@ body {
 
 .owl-carousel .clients-logo:hover img {
     filter: brightness(1);
+}
+
+/* 亮色主题下运营商logo调整 - 使用深色高亮 */
+:root[data-theme="light"] .owl-carousel .clients-logo img {
+    filter: brightness(0.7);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="light"] .owl-carousel .clients-logo:hover img {
+    filter: brightness(0.2); /* 使用黑色/深色高亮，与白色主题形成对比 */
+}
+
+/* 移除之前的复杂效果 */
+:root[data-theme="light"] .owl-carousel .clients-logo::before,
+:root[data-theme="light"] .owl-carousel .clients-logo::after {
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -835,6 +1061,24 @@ section {
         width: 100%;
         margin-top: 10px;
     }
+    
+    /* 移动端下主题切换按钮样式 */
+    .theme-toggle-btn {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        padding: 12px 20px;
+        margin-top: 10px;
+    }
+    
+    .theme-toggle-btn i {
+        margin-right: 5px;
+    }
+    
+    .theme-toggle-btn::after {
+        content: "切换主题";
+        margin-left: 5px;
+    }
 }
 
 .pt-0 {
@@ -1098,4 +1342,44 @@ section {
         max-height: 80vh;
         overflow-y: auto;
     }
+}
+
+/* 移动端下亮色主题样式调整 */
+@media (max-width: 768px) {
+    :root[data-theme="light"] .nav {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    :root[data-theme="light"] .nav a:not(.register):not(.theme-toggle-btn) {
+        color: var(--text-color);
+    }
+    
+    :root[data-theme="light"] .theme-toggle-btn::after {
+        color: var(--text-color);
+    }
+}
+
+/* 特性卡片标题 */
+:root[data-theme="light"] .feature-card h3 {
+    color: var(--primary-color);
+}
+
+/* 价格卡片 */
+:root[data-theme="light"] .price-card.featured {
+    border: 1px solid var(--primary-color);
+    background-color: rgba(30, 60, 114, 0.05);
+}
+
+:root[data-theme="light"] .price-card h3 {
+    color: var(--primary-color);
+}
+
+/* 亮色主题下的标题文字 */
+:root[data-theme="light"] .pricing h2,
+:root[data-theme="light"] .features h2 {
+    background: linear-gradient(to right, #1e3c72, #4b9fe1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 } 

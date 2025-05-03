@@ -79,6 +79,9 @@
                 <a href="https://fo2.netfly.life/login">登录</a>
                 <a href="https://fo2.netfly.life/register" class="register">立即注册</a>
                 <a href="https://t.me/netfly_vpn" class="telegram-link">联系我们</a>
+                <a href="#" class="theme-toggle-btn" id="themeToggle" title="切换主题">
+                    <i class="fas fa-lightbulb"></i>
+                </a>
             </nav>
         </div>
     </header>
@@ -194,5 +197,63 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- 主题切换脚本 -->
+    <script>
+        // 获取存储的主题或默认为暗色
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        // 应用保存的主题
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        // 更新logo
+        updateLogo(currentTheme);
+        
+        // 更新图标显示
+        updateThemeIcon(currentTheme);
+        
+        // 主题切换按钮点击事件
+        document.getElementById('themeToggle').addEventListener('click', function(e) {
+            e.preventDefault(); // 阻止默认链接行为
+            
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            // 设置新主题
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            // 保存到本地存储
+            localStorage.setItem('theme', newTheme);
+            
+            // 更新logo
+            updateLogo(newTheme);
+            
+            // 更新图标
+            updateThemeIcon(newTheme);
+        });
+        
+        // 更新主题图标
+        function updateThemeIcon(theme) {
+            const icon = document.querySelector('#themeToggle i');
+            if (theme === 'light') {
+                icon.className = 'fas fa-moon'; // 亮色主题显示月亮图标
+            } else {
+                icon.className = 'fas fa-lightbulb'; // 暗色主题显示灯泡图标
+            }
+        }
+        
+        // 更新Logo
+        function updateLogo(theme) {
+            const logo = document.querySelector('.logo');
+            if (theme === 'light') {
+                logo.src = 'assets/images/logo-light.svg'; // 亮色主题用深色logo
+            } else {
+                logo.src = 'assets/images/logo.svg'; // 暗色主题用亮色logo
+            }
+        }
+    </script>
 </body>
 </html> 
